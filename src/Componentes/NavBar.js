@@ -1,13 +1,14 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
-import CardWidget from './CardWidget';
+import {CardWidget} from './CardWidget';
+import { NavLink } from "react-router-dom"
 
-function NavBar() {
-  
+export const NavBar = () => {
+
   return (
     <Nav className='nav'>
       <Nav.Item>
-        <Nav.Link  href="/home">Inicio</Nav.Link>
+        <NavLink to={'/'}>Home</NavLink>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link>Productos</Nav.Link>
@@ -20,5 +21,4 @@ function NavBar() {
       </Nav.Item>
     </Nav>
   );
-}
-export default NavBar;
+};

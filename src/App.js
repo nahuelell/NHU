@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Saludo from './Componentes/Saludo';
-import NavBar from './Componentes/NavBar';
-import ItemListContainer from './Componentes/ItemListContainer';
+import { ItemListContainer } from './Componentes/ItemListContainer';
+import {NavBar} from './Componentes/NavBar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-function App() {
-  const estilos = {
-    backgroundColor: "red",
-    padding: "15px"
-  }
-  const log = ()=> {console.log("holi")}
+export function App() {
+
   return (  
-    <div className='containern'>
-    <NavBar/>
-    <ItemListContainer style={{backgroundColor:"blue"}} greeting={'Holiwis'}/>
-    <h1>Hola Mundo</h1>
-    <h1 style={estilos}>Nuevo Mensaje</h1>
-    </div>
+    <div className='container'>
+    <NavBar/>  
+    <Container>
+      <Row className="justify-content-center text-center" md={6}>
+      <Col lg={4}>
+        <ItemListContainer/>
+        
+     </Col>
+      </Row>
+    </Container>
+    
+   </div>
   );
-}
-
-export default App;
+};

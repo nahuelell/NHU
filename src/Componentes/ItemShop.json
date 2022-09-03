@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "title": "Bandolera Cuero",
+        "precio": 2500 ,
+        "img1": "../img/bandolera1.jpg",
+        "img2": "../img/bandolera2.jpg",
+        "stock": 3
+    },
+    {
+        "id": "2",
+        "title": "Bolso de mano",
+        "precio": 2300 ,
+        "img1": "../img/bolsopequeño1.jpg",
+        "img2": "../img/bolsopequeño2.jpg",
+        "stock": 10
+    },
+    {
+        "id": "3",
+        "title": "Bolso Viaje Beige",
+        "precio": 3500 ,
+        "img1": "../img/bolsoviajebeige1.jpg",
+        "img2": "../img/bolsoviajebeige1.jpg",
+        "stock": 5
+    },
+    {
+        "id": "4",
+        "title": "Bolso Viaje Negro",
+        "precio":3500 ,
+        "img1": "../img/bolsoviajenegro1.jpg",
+        "img2": "../img/bolsoviajenegro2.jpg",
+        "stock": 10
+    },
+    {
+        "id": "5",
+        "title": "Mochila Cuero",
+        "precio": 2800 ,
+        "img1": "../img/mochilacuero1.jpg",
+        "img2": "../img/mochilacuero2.jpg",
+        "stock": 9
+    },
+    {
+        "id": "6",
+        "title": "Mochila Dorada",
+        "precio": 2900 ,
+        "img1": "../img/mochiladorada1.jpg",
+        "img2": "../img/mochiladorada2.jpg",
+        "stock": 10
+    },
+    {
+        "id": "7",
+        "title": "Mochila Marron",
+        "precio": 2900 ,
+        "img1": "../img/mochilamarron1.jpg",
+        "img2": "../img/mochilamarron2.jpg",
+        "stock": 6
+    },
+    {
+        "id": "8",
+        "title": "Mochila Rosa",
+        "precio": 2900,
+        "img1": "../img/mochilarosa1.jpg",
+        "img2": "../img/mochilarosa2.jpg",
+        "stock": 10
+    },
+    {
+        "id": "9",
+        "title": "Riñonera",
+        "precio": 2000 ,
+        "img1": "../img/riñonera1.jpg",
+        "img2": "../img/riñonera2.jpg",
+        "stock": 10
+    }
+]

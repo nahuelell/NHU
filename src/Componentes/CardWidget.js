@@ -1,11 +1,10 @@
 import React from 'react'
-
-const CardWidget = () => {
+export const CardWidget = () => {
   return (
     <div >
-      <ion-icon style={{fontSize:"30px"}} name="cart-outline">4</ion-icon>
+      <h1><ion-icon style={{fontSize:"30px"}} name="cart-outline"></ion-icon></h1>
+  
+      
     </div>
   )
-}
-
-export default CardWidget
+};
