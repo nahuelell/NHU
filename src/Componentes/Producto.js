@@ -2,9 +2,8 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { useState } from 'react'
-
-
-export const Producto = ({title, img1, stock}) => {
+import { Link } from 'react-router-dom'
+export const Producto = ({title, img1, stock,slug}) => {
   const [counter, setCounter] = useState(0)
   const masClick = ()=> {
     counter < stock ? setCounter(counter + 1): setCounter(counter)
@@ -21,12 +20,15 @@ export const Producto = ({title, img1, stock}) => {
         <Card.Text>
          <h3>{counter}</h3>       
         </Card.Text>
-        <Button onClick={masClick}>+</Button>   
-        <Button onClick={menosClick}>-</Button>
+        <Button style={{margin: '5px'}} onClick={masClick}>+</Button>   
+        <Button style={{margin: '5px'}}  onClick={menosClick}>-</Button>
         <p>Productos en Stock {stock - counter}</p> 
         <Button>COMPRAR</Button>
-
+        <Link to={`/productos/${slug}`}>
+        <Button>Detalles</Button>
+        </Link>       
       </Card.Body>
-       </Card>   
+       </Card>  
+    
   )
 }
