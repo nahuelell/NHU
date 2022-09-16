@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from './ItemDetail'
 import itemShop from './ItemShop.json'
+
 export const ItemDetailContainer = () => {
     const [items, setItem] = useState([ ])
     const { slug } = useParams()
@@ -12,16 +13,17 @@ export const ItemDetailContainer = () => {
         }
       })
     })
-    const getItem = ()=>{
-        return new Promise(resolve => {
-            setTimeout(()=>{
-            resolve (itemShop.find(p => p.slug === slug))
-            },2000)
-        }) 
-    } 
+    function getItem() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(itemShop.find(p => p.slug === slug))
+      }, 500)
+    })
+  } 
+
   return (
     <div>
-    <ItemDetail i={items}/>
+    <ItemDetail data={items}/>
     </div>
     
   )

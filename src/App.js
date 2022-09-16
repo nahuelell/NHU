@@ -1,20 +1,26 @@
 import './App.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import { ItemDetailContainer } from './Componentes/ItemDetailContainer';
+import { NavBar } from './Componentes/NavBar';
+import { CardWidget } from './Componentes/CardWidget';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ItemListContainer } from './Componentes/ItemListContainer';
+import { CartProvider } from './Context/CartContext';
 export function App() {
 
   return (  
-  <div className='container'>
-    <Container>
-      <Row className="justify-content-center text-center" md={6}>
-      <Col lg={4}>
-        <h1>Hola Buen dia</h1>   
-     </Col>
-      </Row>
-    </Container>
-    
+  <div> 
+    <BrowserRouter>
+    <CartProvider>
+     <NavBar/>   
+     <Routes>  
+      <Route path='/productos' element={<ItemListContainer/>}/>
+      <Route path='/categoria/:categoryID' element={<ItemListContainer/>}/>
+      <Route path='/productos/:slug' element={<ItemDetailContainer/>}/>   
+      <Route path='/cart' element={<CardWidget/>}/>
+     </Routes>
+     </CartProvider>   
+  </BrowserRouter>
   </div>
   );
+
 };
