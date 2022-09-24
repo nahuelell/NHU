@@ -1,33 +1,27 @@
 import React from 'react'
-import itemShop from './ItemShop.json';
 import { useState , useEffect } from 'react';
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 export const ItemListContainer = () => {
   const [product, setProduct] = useState ([ ]);
   const { categoryID } = useParams()
-  const getProduct = (info, time) => 
-  new Promise ((resolve,reject)=> {
-    setTimeout(()=>{
-      info ? resolve(info):reject("fallo");
-  }, time)
-  });
  
   useEffect(()=>{  
-    if ( categoryID ){
-      getProduct(itemShop, 1000) .then((res)=>{
-        setProduct(res.filter(item => item.category == categoryID ))}
-        ).catch((err)=> console.log (err,": No hay productos en vigencia"))
-    }
-    else {
-    getProduct(itemShop, 3000) .then((res)=>{
-      setProduct(res)}
-    ).catch((err)=> console.log (err,": No hay productos en vigencia"))
-    }
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'products');
+    if(categoryID){
+      const queryFilter = query(queryCollection, where('category','==', categoryID))
+      getDocs(queryFilter)
+          .then( res => setProduct(res.docs.map(product => ({id: product.id, ...product.data()}))))
+      } else {
+      getDocs (queryCollection)
+        .then( res => setProduct(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    } 
   }, [categoryID])
 
   return (   

@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import {CardWidget} from './CardWidget';
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const NavBar = () => {
   
