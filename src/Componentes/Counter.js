@@ -19,7 +19,7 @@ export const Counter = ({stock, onAdd}) => {
     <Button style={{margin: '5px'}}  onClick={sustraccion}>-</Button>
     <p>Productos en Stock {stock - counter}</p> 
       <div>
-         <Button disabled={stock <= 0} onClick={()=> onAdd(counter) }>Agregar al Carrito</Button>
+         <Button onClick={()=> onAdd(counter)} disabled={0 > stock}>Agregar al Carrito</Button>
        </div>   
     </div>
     
