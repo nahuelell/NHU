@@ -32,7 +32,7 @@ export const Cart = () => {
       const db = getFirestore();
       const ordersCollection = collection(db, 'orders');
       addDoc(ordersCollection, order)
-      .then(({orderId}) => orderId)
+      .then(({orderId}) => console.log(orderId))
   }
   
   const todos = () => {
@@ -53,7 +53,7 @@ export const Cart = () => {
   
   if (cart.length === 0) {
     return (
-      <>
+      <>     
         <p>No hay elementos en el Carrito</p>
         <Link to='/productos'>Hacer compras</Link>
       </>
